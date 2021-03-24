@@ -11,14 +11,104 @@ class ExerciseListing extends StatelessWidget {
     }
 
     return Scaffold(
-      key: ValueKey('scaffold'),
       appBar: AppBar(
-        title: Text('Exercise Listing')
+        title: Text('Exercise Listing'),
+        actions: [
+          IconButton(icon: Icon(Icons.search), onPressed: () => {})
+        ]
       ),
       drawer: Sidebar(),
-      body: TextButton(
-        child: Text('View Exercise'),
-        onPressed: () => _navigate('1'),
+      body: ListView(
+        children: [
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  alignment: Alignment.topCenter,
+                  width: 50.0,
+                  child: Icon(Icons.star),
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      ListTile(
+                          title: Text('Exercise title'),
+                          onTap: () => _navigate('1')
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                    ]
+                  )
+                )
+              ]
+            )
+          ),
+          Container(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  alignment: Alignment.topCenter,
+                  width: 50.0,
+                  child: Text('A')
+                ),
+                Expanded(
+                  child: Column(
+                    children: [
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                      ListTile(
+                          title: Text('Another Exercise'),
+                          onTap: () => {}
+                      ),
+                    ]
+                  )
+                )
+              ]
+            )
+          )
+        ],
       )
     );
   }

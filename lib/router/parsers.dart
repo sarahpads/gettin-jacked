@@ -24,6 +24,10 @@ class JackedRouteInformationParser extends RouteInformationParser<JackedLocation
         location = JackedLocation.exerciseDetail(id: uri.pathSegments[1]);
         break;
 
+      case JackedLocationKeys.workoutDetail:
+        location = JackedLocation.workoutDetail(id: uri.pathSegments[1]);
+        break;
+
       case JackedLocationKeys.workouts:
       default:
         location = JackedLocation.workoutListing();
@@ -35,6 +39,8 @@ class JackedRouteInformationParser extends RouteInformationParser<JackedLocation
 
   @override
   RouteInformation restoreRouteInformation(JackedLocation location) {
+    print('restoring route');
+    print(location.key);
     return RouteInformation(location: location.path);
   }
 }

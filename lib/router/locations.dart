@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 class JackedLocationKeys {
   static const workouts = 'workout-listing';
+  static const workoutDetail = 'workout-detail';
   static const exercises = 'exercise-listing';
   static const exerciseDetail = 'exercise-detail';
 }
@@ -16,9 +17,18 @@ class JackedLocation {
     @required this.path,
   });
 
+  JackedLocation.loading() :
+        key = 'loading',
+        path = '/';
+
   JackedLocation.workoutListing() :
         key = JackedLocationKeys.workouts,
         path = '/workout-listing';
+
+  JackedLocation.workoutDetail({ @required String id }) :
+        key = JackedLocationKeys.workoutDetail,
+        path = '/workout-detail',
+        params = { 'id': id };
 
   JackedLocation.exerciseListing() :
         key = JackedLocationKeys.exercises,
