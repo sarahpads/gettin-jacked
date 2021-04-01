@@ -23,8 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  charts_flutter: 0.10.0
   syncfusion_flutter_charts: 18.4.48
+  path_provider: 2.0.1
 
 
   # The following adds the Cupertino Icons font to your application.

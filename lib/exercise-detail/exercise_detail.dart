@@ -8,7 +8,10 @@ class ExerciseDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Exercise Detail')
+        title: Text('Exercise Detail'),
+        actions: [
+          IconButton(icon: Icon(Icons.star), onPressed: () => {})
+        ]
       ),
       body: Text('exercise details')
     );
