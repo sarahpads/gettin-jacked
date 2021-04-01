@@ -28,6 +28,14 @@ class JackedRouteInformationParser extends RouteInformationParser<JackedLocation
         location = JackedLocation.workoutDetail(id: uri.pathSegments[1]);
         break;
 
+      case JackedLocationKeys.workoutCurrent:
+        location = JackedLocation.workoutCurrent();
+        break;
+
+      case JackedLocationKeys.workoutEdit:
+        location = JackedLocation.workoutEdit(id: uri.pathSegments[1]);
+        break;
+
       case JackedLocationKeys.workouts:
       default:
         location = JackedLocation.workoutListing();

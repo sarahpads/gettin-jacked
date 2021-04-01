@@ -10,7 +10,20 @@ class SessionItem extends StatelessWidget {
           children: [
             ListTile(
               title: Text('March 23 2020'),
-              subtitle: Text('Duration: 45 minutes'),
+            ),
+            Container(
+              padding: EdgeInsets.fromLTRB(15.0, 0, 15.0, 10.0),
+              child: Row(
+                children: [
+                  Icon(Icons.timer),
+                  SizedBox(width: 5),
+                  Text('45 min'),
+                  SizedBox(width: 10),
+                  Icon(Icons.fitness_center),
+                  SizedBox(width: 5),
+                  Text('450 lb')
+                ]
+              ),
             ),
             LineChart()
           ]

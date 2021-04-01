@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gettin_jacked/exercise-detail/exercise_detail.dart';
 import 'package:gettin_jacked/exercise-listing/exercise_listing.dart';
 import 'package:gettin_jacked/router/locations.dart';
+import 'package:gettin_jacked/workout-current/workout_current.dart';
 import 'package:gettin_jacked/workout-detail/workout_detail.dart';
+import 'package:gettin_jacked/workout-edit/workout_edit.dart';
 import 'package:gettin_jacked/workout-listing/workout_listing.dart';
 
 class JackedRouterDelegate extends RouterDelegate<JackedLocation> with PopNavigatorRouterDelegateMixin<JackedLocation>, ChangeNotifier {
@@ -95,6 +97,12 @@ class JackedRouterDelegate extends RouterDelegate<JackedLocation> with PopNaviga
 
           case JackedLocationKeys.workoutDetail:
             return MaterialPage(child: WorkoutDetail(id: location.params['id']), key: ValueKey(location.key));
+
+          case JackedLocationKeys.workoutCurrent:
+            return MaterialPage(child: WorkoutCurrent(), key: ValueKey(location.key));
+
+          case JackedLocationKeys.workoutEdit:
+            return MaterialPage(child: WorkoutEdit(id: location.params['id']), key: ValueKey(location.key));
 
           case JackedLocationKeys.exercises:
             return MaterialPage(child: ExerciseListing(), key: ValueKey(location.key), maintainState: false);

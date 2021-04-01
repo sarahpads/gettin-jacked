@@ -23,7 +23,7 @@ class WorkoutItem extends StatelessWidget {
               TextButton.icon(
                 icon: Icon(Icons.play_arrow),
                 label: Text('Resume'), // or start
-                onPressed: () => {}
+                onPressed: () => JackedRouterDelegate.of(context).push(JackedLocation.workoutCurrent())
               )
             ]
           )

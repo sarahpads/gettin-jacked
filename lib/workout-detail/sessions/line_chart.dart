@@ -11,9 +11,9 @@ class LineChart extends StatelessWidget {
             return;
           }
 
-          DateTime date = DateTime.fromMicrosecondsSinceEpoch(args.value.toInt());
+          DateTime date = DateTime.fromMillisecondsSinceEpoch(args.value.toInt());
 
-          args.text = '${date.hour.toString()}:${date.minute.toString()}:${date.second.toString()}';
+          args.text = '${date.hour.toString()}:${date.minute.toString()}';
         },
         primaryXAxis: NumericAxis(
           name: 'datetime'
