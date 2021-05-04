@@ -1,0 +1,11 @@
+{
+  "exercises": [
+    { "id": "1", "title": "Pull Up", "muscleGroup": "BACK" },
+    { "id": "2", "title": "Chin Up", "muscleGroup": "ARMS" },
+    { "id": "3", "title": "Push Up", "muscleGroup": "CHEST" },
+    { "id": "4", "title": "Split Squat", "muscleGroup": "LEGS" },
+    { "id": "5", "title": "Back Fly", "muscleGroup": "BACK" } ,
+    { "id": "6", "title": "Dumbbell Row", "muscleGroup": "BACK" },
+    { "id": "7", "title": "Chest Press", "muscleGroup": "CHEST" }
+  ]
+}

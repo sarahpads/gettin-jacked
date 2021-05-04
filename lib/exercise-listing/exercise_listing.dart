@@ -37,13 +37,17 @@ class _ExerciseListingState extends State<ExerciseListing> {
       drawer: Sidebar(),
       body: FutureBuilder(
         future: _loadExercises,
-        builder: (BuildContext context, AsyncSnapshot response) {
-          if (response.connectionState != ConnectionState.done) {
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (snapshot.connectionState != ConnectionState.done) {
             return Text('loading');
           }
 
+          if (snapshot.hasError) {
+            return Text(snapshot.error.toString());
+          }
+
           return Column(
-            children: response.data.map<Widget>((group) => Container(
+            children: snapshot.data.map<Widget>((group) => Container(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -59,7 +63,7 @@ class _ExerciseListingState extends State<ExerciseListing> {
                       children: group.exercises.map<Widget>((exercise) =>
                         ListTile(
                           title: Text(exercise.title),
-                          onTap: () => _navigate('1')
+                          onTap: () => _navigate(exercise.id)
                         )
                       ).toList()
                     )
@@ -77,12 +81,14 @@ class _ExerciseListingState extends State<ExerciseListing> {
 class Exercise {
   final String title;
   final String muscleGroup;
+  final String id;
 
-  Exercise({ @required this.title, @required this.muscleGroup });
+  Exercise({ @required this.title, @required this.muscleGroup, @required this.id });
 
   Exercise.fromJson(Map<String, dynamic> data) :
     title = data['title'],
-    muscleGroup = data['muscleGroup'];
+    muscleGroup = data['muscleGroup'],
+    id = data['id'];
 }
 
 class Group {
@@ -93,7 +99,6 @@ class Group {
 }
 
 Future<List<Group>> loadExercises(BuildContext context) async {
-  print('here');
   String data = await DefaultAssetBundle.of(context).loadString('assets/exercises.json');
   Map<String, dynamic> json = await jsonDecode(data);
   Map<String, List<Exercise>> groups = {};
