@@ -20,13 +20,13 @@ class _GettinJackedState extends State<GettinJacked> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        routeInformationParser: JackedRouteInformationParser(),
-        routerDelegate: delegate
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      routeInformationParser: JackedRouteInformationParser(),
+      routerDelegate: delegate
     );
   }
 }
